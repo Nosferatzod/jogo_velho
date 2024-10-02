@@ -3,27 +3,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 100vh;
     margin: 0;
-    background-color: #d0e7f9; 
-}
-
-#background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+    background-color: #e0e0e0;
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinhando os itens no centro */
     text-align: center;
 }
 
 h1 {
-    color: #0f68b6; 
+    color: #333;
     margin-bottom: 20px;
 }
 
@@ -31,15 +25,15 @@ h1 {
     margin-bottom: 15px;
     font-size: 1.5em;
     font-weight: bold;
-    color: #0f68b6;
+    color: #0077b6;
 }
 
 #scoreboard {
     margin-bottom: 20px;
     font-size: 1.1em;
-    color: #ffffff;
+    color: #333;
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Centraliza o scoreboard */
     gap: 15px;
 }
 
@@ -48,6 +42,7 @@ h1 {
     grid-template-columns: repeat(3, 120px);
     grid-gap: 10px;
     margin-bottom: 25px;
+    align-items: center;
 }
 
 .cell {
@@ -55,22 +50,22 @@ h1 {
     height: 120px;
     font-size: 2.5em;
     font-weight: bold;
-    background-color: #a3c9e2; 
-    border: 3px solid #1c3d5a;
+    background-color: #caf0f8;
+    border: 3px solid #023e8a;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 .cell:hover {
-    background-color: #85b2d1;
+    background-color: #90e0ef;
 }
 
 .cell:focus {
-    outline: 2px solid #1c3d5a;
+    outline: 2px solid #0096c7;
 }
 
 .cell.winning-cell {
-    background-color: #508ca4; 
+    background-color: #76c893;
     color: #fff;
     transform: scale(1.1);
 }
@@ -78,17 +73,18 @@ h1 {
 .reset, .new {
     font-size: 1.2em;
     padding: 12px 25px;
-    background-color: #1c3d5a; 
-    background-image: linear-gradient(135deg, #1c3d5a, #346792);
-    color: #ffffff;
+    background-color: #0077b6;
+    background-image: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: #fff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s;
+    margin-top: 15px; /* Espaçamento entre os botões e outros elementos */
 }
 
 .reset:hover, .new:hover {
-    background-color: #295374; 
+    background-color: #005f8b;
     transform: scale(1.05);
 }
 
