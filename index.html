@@ -2,19 +2,37 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="./assets/icon.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Velha</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
+    <audio autoplay loop>
+        <source src="./audio/rain.mp3" type="audio/mp3">
+    </audio>
+
+    <video id="background-video" autoplay muted loop>
+        <source src="./video/coffe.mp4" type="video/mp4">
+    </video>
     <div class="container">
         <h1>Jogo da Velha</h1>
         <div id="status" class="status" aria-live="polite">É a vez do Jogador X</div>
+        
+        <div class="mode-select">
+            <label for="game-mode">Escolha o modo de jogo:</label>
+            <select id="game-mode">
+                <option value="2p">2 Jogadores</option>
+                <option value="ai">Contra a Máquina</option>
+            </select>
+        </div>
+
         <div id="scoreboard">
             <p>Jogador X Ganhou: <span id="x-wins">0</span></p>
             <p>Jogador O Ganhou: <span id="o-wins">0</span></p>
             <p>Empates: <span id="draws">0</span></p>
         </div>
+
         <div id="board" class="board">
             <button class="cell" data-index="0"></button>
             <button class="cell" data-index="1"></button>
@@ -30,10 +48,5 @@
         <button id="new" class="new">Novo Jogo</button>
     </div>
     <script src="./js/script.js"></script>
-    <footer>
-        <div class="container text-center">
-            <p>Aplicação WEB Desenvolvida pela Aluna de Informática Soraya.</p>
-        </div>
-    </footer>
 </body>
 </html>

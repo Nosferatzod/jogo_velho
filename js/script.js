@@ -4,10 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const status = document.getElementById('status');
     const resetButton = document.getElementById('reset');
     const newGameButton = document.getElementById('new');
+    const gameModeSelect = document.getElementById('game-mode');
 
     let currentPlayer = 'X';
     let gameState = ['', '', '', '', '', '', '', '', ''];
     let gameActive = true;
+    let vsAI = false; // Define o modo de jogo contra a máquina
 
     let xWins = 0;
     let oWins = 0;
@@ -28,6 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
         [2, 4, 6]
     ];
 
+    gameModeSelect.addEventListener('change', () => {
+        vsAI = gameModeSelect.value === 'ai';
+        resetGame();
+    });
+
     function handleCellClick(clickedCellEvent) {
         const clickedCell = clickedCellEvent.target;
         const clickedCellIndex = parseInt(clickedCell.getAttribute('data-index'));
@@ -43,27 +50,26 @@ document.addEventListener('DOMContentLoaded', () => {
         checkForWin();
         checkForDraw();
 
-        currentPlayer = 'O';
-        if (gameActive) {
-            status.textContent = `É a vez do Jogador ${currentPlayer}`;
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        if (vsAI && gameActive && currentPlayer === 'O') {
             aiMove();
+        } else {
+            status.textContent = `É a vez do Jogador ${currentPlayer}`;
         }
     }
 
     function aiMove() {
         // IA faz sua jogada
         const bestMove = minimax(gameState, 'O').index;
-        gameState[bestMove] = currentPlayer;
-        cells[bestMove].textContent = currentPlayer;
+        gameState[bestMove] = 'O';
+        cells[bestMove].textContent = 'O';
         cells[bestMove].classList.add('clicked');
 
         checkForWin();
         checkForDraw();
 
         currentPlayer = 'X';
-        if (gameActive) {
-            status.textContent = `É a vez do Jogador ${currentPlayer}`;
-        }
+        status.textContent = `É a vez do Jogador ${currentPlayer}`;
     }
 
     function minimax(newGameState, player) {

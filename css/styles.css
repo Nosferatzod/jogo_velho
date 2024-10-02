@@ -5,7 +5,17 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #e0e0e0;
+    background-color: #d0e7f9; 
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .container {
@@ -13,7 +23,7 @@ body {
 }
 
 h1 {
-    color: #333;
+    color: #0f68b6; 
     margin-bottom: 20px;
 }
 
@@ -21,13 +31,13 @@ h1 {
     margin-bottom: 15px;
     font-size: 1.5em;
     font-weight: bold;
-    color: #0077b6;
+    color: #0f68b6;
 }
 
 #scoreboard {
     margin-bottom: 20px;
     font-size: 1.1em;
-    color: #333;
+    color: #ffffff;
     display: flex;
     justify-content: space-around;
     gap: 15px;
@@ -45,22 +55,22 @@ h1 {
     height: 120px;
     font-size: 2.5em;
     font-weight: bold;
-    background-color: #caf0f8;
-    border: 3px solid #023e8a;
+    background-color: #a3c9e2; 
+    border: 3px solid #1c3d5a;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 .cell:hover {
-    background-color: #90e0ef;
+    background-color: #85b2d1;
 }
 
 .cell:focus {
-    outline: 2px solid #0096c7;
+    outline: 2px solid #1c3d5a;
 }
 
 .cell.winning-cell {
-    background-color: #76c893;
+    background-color: #508ca4; 
     color: #fff;
     transform: scale(1.1);
 }
@@ -68,9 +78,9 @@ h1 {
 .reset, .new {
     font-size: 1.2em;
     padding: 12px 25px;
-    background-color: #0077b6;
-    background-image: linear-gradient(135deg, #0077b6, #00b4d8);
-    color: #fff;
+    background-color: #1c3d5a; 
+    background-image: linear-gradient(135deg, #1c3d5a, #346792);
+    color: #ffffff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -78,7 +88,7 @@ h1 {
 }
 
 .reset:hover, .new:hover {
-    background-color: #005f8b;
+    background-color: #295374; 
     transform: scale(1.05);
 }
 
